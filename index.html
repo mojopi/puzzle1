@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+		.boxes{
+			position:absolute;
+			width:400px;
+			height:100px;
+			border:1px solid black;
+			background-color:rgba(0, 200, 0, 0.5);
+			font-size:20px;
+			text-align:center;
+			color:black;
+			font-family:courier;
+
+		}
+	</style>
+</head>
+<body>
+	<center style="font-family:courier; font-size:40px">[flawed] Recipe for making a talking head on click<br>
+		<a href="part2.html">to the code...</a>
+	</center>
+
+	<script type="text/javascript">
+		var square;
+		var counter = 0;
+
+		
+
+		function makeSquare(x){
+			var square = document.createElement("div");
+			document.body.appendChild(square);
+			square.classList.add("boxes");
+			// square.style.transform="rotate("+Math.random()*45+"deg)";
+			square.style.left = Math.random()*1000+"px";
+			square.style.top = Math.random()*500+"px";
+			square.id = "box"+x;
+
+			function move (event){
+			square.style.left = event.clientX-150+"px";
+			square.style.top = event.clientY-25+"px";
+			}
+
+
+			square.addEventListener("click", function(){
+				counter=counter+1;
+				if (counter%2==1){
+			document.addEventListener("mousemove", move)
+
+				 } //end of if statement
+
+				else if (counter%2==0){
+					document.removeEventListener("mousemove", move)//end of remove event listener//
+			
+
+			}// end of else statement//
+
+
+		}) // end of click event listener
+
+		
+		
+
+
+
+		} // end of function//
+
+
+
+
+		for(var i=0; i<9; i=i+1){
+			makeSquare(i)
+		}
+
+
+
+		box0.innerText = "create a div";
+
+		box1.innerText = "add an event listener to the div that listens for a click";
+
+		box2.innerText = "give the div an id";
+
+		
+		box3.innerText = "style the div";
+
+		box4.innerText = "create four image files and put them in the same folder as the code";
+
+		box5.innerText = "title the images with the numbers 1.png, 2.png, 3.png, and 4.png";
+
+		box6.innerText = "create a variable that stores a new random 1-4 integer every time you click";
+
+		box7.innerText = "create a function called 'changeImage' that sets the divs background image to 1.png, 2.png, 3.png, or 4.png";
+
+	box8.innerText = "run the 'changeImage' function in a setInteval function";
+
+	</script>
+
+</body>
+</html>
